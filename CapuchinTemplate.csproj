@@ -82,6 +82,9 @@
 		<Reference Include="LibCpp2IL">
 		  <HintPath>$(BepInExAssemblyPath)\LibCpp2IL.dll</HintPath>
 		</Reference>
+		<Reference Include="MelonLoader">
+		  <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Capuchin\MelonLoader\net35\MelonLoader.dll</HintPath>
+		</Reference>
 		<Reference Include="Mono.Cecil">
 		  <HintPath>$(BepInExAssemblyPath)\Mono.Cecil.dll</HintPath>
 		</Reference>

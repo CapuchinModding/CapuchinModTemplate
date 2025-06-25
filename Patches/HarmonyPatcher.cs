@@ -7,23 +7,23 @@ namespace CapuchinTemplate.Patches
 {
     public class HarmonyPatcher
     {
-        public static Harmony Patch(string UUID)
+        public static HarmonyLib.Harmony Patch(string UUID)
         {
-            Harmony thisHarmony = new Harmony(UUID);
+            HarmonyLib.Harmony thisHarmony = new HarmonyLib.Harmony(UUID);
             thisHarmony.PatchAll(Assembly.GetCallingAssembly());
 
             return thisHarmony;
         }
 
-        public static Harmony PatchAssembly(string UUID, Assembly assemblyToPatch)
+        public static HarmonyLib.Harmony PatchAssembly(string UUID, Assembly assemblyToPatch)
         {
-            Harmony thisHarmony = new Harmony(UUID);
+            HarmonyLib.Harmony thisHarmony = new HarmonyLib.Harmony(UUID);
             thisHarmony.PatchAll(assemblyToPatch);
 
             return thisHarmony;
         }
 
-        public static void Unpatch(Harmony instance) =>
+        public static void Unpatch(HarmonyLib.Harmony instance) =>
             instance.UnpatchSelf();
     }
 }

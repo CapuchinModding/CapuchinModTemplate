@@ -1,7 +1,5 @@
 ﻿using BepInEx.Logging;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using MelonLoader;
 using UnityEngine;
 
 namespace CapuchinTemplate
@@ -18,6 +16,12 @@ namespace CapuchinTemplate
             WriteLine("Hello world");
         }
 
-        public void WriteLine(string text, LogLevel severity = LogLevel.Debug) => Init.initInstance.Log.Log(severity, text);
+        public void WriteLine(string text, LogLevel severity = LogLevel.Debug)
+        {
+            if (ModInfo.Loader == ModLoader.BepInEx)
+                BepInExInit.initInstance.Log.Log(severity, text);
+            else if (ModInfo.Loader == ModLoader.MelonLoader)
+                MelonLogger.Msg(text);
+        }
     }
 }
